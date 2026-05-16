@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribbler | Official Band Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+            background: linear-gradient(45deg, #ff6b9d, #c06bff, #6bc5ff, #ffd56b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 4px solid #ff6b9d;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffd56b;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b9d;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styling */
+        section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about {
+            background: rgba(255, 107, 157, 0.9);
+        }
+
+        .music {
+            background: rgba(192, 107, 255, 0.9);
+        }
+
+        .merch {
+            background: rgba(107, 197, 255, 0.9);
+        }
+
+        .contact {
+            background: rgba(255, 213, 107, 0.9);
+        }
+
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        /* Music Grid */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .album-card {
+            background: rgba(255, 255, 255, 0.3);
+            border: 3px solid #fff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .album-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .album-art {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* Merch Grid */
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .merch-item {
+            background: rgba(255, 255, 255, 0.3);
+            border: 3px solid #fff;
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .merch-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .merch-img {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: 3px solid #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        /* Easter Egg */
+        .secret-message {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background: #ff6b9d;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            transition: bottom 0.5s;
+            max-width: 300px;
+            z-index: 1000;
+        }
+
+        .secret-message.show {
+            bottom: 20px;
+        }
+
+        .floating-emoji {
+            position: fixed;
+            font-size: 3rem;
+            pointer-events: none;
+            animation: float 3s ease-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-500px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#merch">Merch</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1 id="bandName">SCRIBBLER</h1>
+        <p>✨ Making noise since [YEAR] ✨</p>
+        <p style="font-size: 1rem; margin-top: 2rem; opacity: 0.8;">(click the logo for a surprise!)</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <div class="content-box">
+            <p style="font-size: 1.2rem; line-height: 1.8;">
+                We're Scribbler! A band that accidentally formed when [BAND MEMBER 1] 
+                brought a guitar to [BAND MEMBER 2]'s birthday party and things got 
+                out of hand. Now we make music that sounds like [YOUR GENRE] had a baby 
+                with [ANOTHER GENRE] and raised it on a steady diet of [RANDOM FOOD].
+            </p>
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-top: 1rem;">
+                Our mission: to create songs that make you want to dance, cry, 
+                or question your life choices—sometimes all at once!
+            </p>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section class="music" id="music">
+        <h2>Our Music</h2>
+        <div class="music-grid">
+            <div class="album-card">
+                <div class="album-art">🎸</div>
+                <h3>Album Title 1</h3>
+                <p>Released: 20XX</p>
+                <p style="margin-top: 1rem;">
+                    <a href="#" class="social-btn" style="display: inline-block; padding: 0.5rem 1rem;">Listen Now</a>
+                </p>
+            </div>
+            <div class="album-card">
+                <div class="album-art">🎹</div>
+                <h3>Album Title 2</h3>
+                <p>Released: 20XX</p>
+                <p style="margin-top: 1rem;">
+                    <a href="#" class="social-btn" style="display: inline-block; padding: 0.5rem 1rem;">Listen Now</a>
+                </p>
+            </div>
+            <div class="album-card">
+                <div class="album-art">🎤</div>
+                <h3>Latest Single</h3>
+                <p>Released: 20XX</p>
+                <p style="margin-top: 1rem;">
+                    <a href="#" class="social-btn" style="display: inline-block; padding: 0.5rem 1rem;">Listen Now</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merch Section -->
+    <section class="merch" id="merch">
+        <h2>Merch Shop</h2>
+        <div class="merch-grid">
+            <div class="merch-item">
+                <div class="merch-img">👕</div>
+                <h3>Band Tee</h3>
+                <p>$XX.XX</p>
+            </div>
+            <div class="merch-item">
+                <div class="merch-img">🧢</div>
+                <h3>Logo Hat</h3>
+                <p>$XX.XX</p>
+            </div>
+            <div class="merch-item">
+                <div class="merch-img">🎧</div>
+                <h3>Sticker Pack</h3>
+                <p>$XX.XX</p>
+            </div>
+            <div class="merch-item">
+                <div class="merch-img">☕</div>
+                <h3>Coffee Mug</h3>
+                <p>$XX.XX</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Social Section -->
+    <section class="contact" id="contact">
+        <h2>Connect With Us</h2>
+        <div class="content-box">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Follow us on social media for updates, behind-the-scenes chaos, 
+                and the occasional meme!
+            </p>
+            <div class="social-links">
+                <a href="#" class="social-btn">Instagram</a>
+                <a href="#" class="social-btn">Spotify</a>
+                <a href="#" class="social-btn">YouTube</a>
+                <a href="#" class="social-btn">TikTok</a>
+                <a href="#" class="social-btn">Bandcamp</a>
+                <a href="#" class="social-btn">Email Us</a>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.8;">
+                (Psst... try double-clicking anywhere on the page!)
+            </p>
+        </div>
+    </section>
+
+    <!-- Secret Message Easter Egg -->
+    <div class="secret-message" id="secretMsg">
+        <p><strong>🎉 You found a secret! 🎉</strong></p>
+        <p>Free download code: SCRIBBLE2000</p>
+    </div>
+
+    <script>
+        // Click band name easter egg
+        let clickCount = 0;
+        document.getElementById('bandName').addEventListener('click', function() {
+            clickCount++;
+            if (clickCount >= 3) {
+                this.style.transform = 'rotate(360deg)';
+                this.style.transition = 'transform 1s';
+                setTimeout(() => {
+                    this.style.transform = 'rotate(0deg)';
+                }, 1000);
+                
+                // Show secret message
+                document.getElementById('secretMsg').classList.add('show');
+                setTimeout(() => {
+                    document.getElementById('secretMsg').classList.remove('show');
+                }, 5000);
+                clickCount = 0;
+            }
+        });
+
+        // Double-click anywhere for floating emojis
+        const emojis = ['🎸', '🎵', '🎶', '⭐', '🎤', '🎹', '🥁', '🎺', '✨', '💫'];
+        document.addEventListener('dblclick', function(e) {
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = e.pageX + 'px';
+            emoji.style.top = e.pageY + 'px';
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => {
+                emoji.remove();
+            }, 3000);
+        });
+
+        // Album card click
+        document.querySelectorAll('.album-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>
