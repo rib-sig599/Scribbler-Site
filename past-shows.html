@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribbler | Past Shows</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .past-shows-page {
+            min-height: 100vh;
+            padding: 3rem 4rem 5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #8b0000;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.4);
+            padding-bottom: 2px;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+
+        .back-link:hover {
+            color: #d4b0e8;
+            text-shadow: 0 0 8px #4b0082;
+        }
+
+        .past-shows-page h1 {
+            font-size: 2.8rem;
+            color: #d4b0e8;
+            letter-spacing: 0.35em;
+            text-shadow: 0 0 20px #4b0082, 4px 4px 12px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0.4rem;
+        }
+
+        .past-shows-page .page-subtitle {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #6b0000;
+            margin-bottom: 3rem;
+        }
+
+        .past-shows-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .show-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .show-card img {
+            width: 100%;
+            display: block;
+            opacity: 0.88;
+            transition: opacity 0.25s, transform 0.25s;
+            cursor: pointer;
+            box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .show-card img:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .show-card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .show-card-venue {
+            font-size: 1rem;
+            color: #c8b8d8;
+        }
+
+        .show-card-date {
+            font-size: 0.8rem;
+            color: #8b0000;
+            letter-spacing: 0.06em;
+        }
+
+        @media (max-width: 768px) {
+            .past-shows-page {
+                padding: 2rem 1.5rem 4rem;
+            }
+
+            .past-shows-page h1 {
+                font-size: 2rem;
+                letter-spacing: 0.2em;
+            }
+
+            .past-shows-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .past-shows-page {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .past-shows-page h1 {
+                font-size: 1.6rem;
+                letter-spacing: 0.1em;
+            }
+
+            .past-shows-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Vertical scrolling taglines — left and right -->
+    <div class="side-tagline side-tagline-left">
+        <div class="scroll-track">play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp;</div>
+    </div>
+    <div class="side-tagline side-tagline-right">
+        <div class="scroll-track">play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp; play chess. smoke weed. make music &nbsp;·&nbsp; Scribbler is sunshine and rainbows.
+            &nbsp;·&nbsp;</div>
+    </div>
+
+    <div class="past-shows-page">
+        <a href="index.html" class="back-link">← Back to Scribbler</a>
+        <h1>SCRIBBLER</h1>
+        <p class="page-subtitle">Past Shows</p>
+
+        <div class="past-shows-grid">
+            <div class="show-card">
+                <img src="img/PastShows/corktown2-7-26.png" alt="Corktown Feb 7 2026">
+                <div class="show-card-info">
+                    <span class="show-card-venue">Corktown</span>
+                    <span class="show-card-date">Feb 7, 2026</span>
+                </div>
+            </div>
+            <div class="show-card">
+                <img src="img/PastShows/Ziggys3-28-26.png" alt="Ziggy's Mar 28 2026">
+                <div class="show-card-info">
+                    <span class="show-card-venue">Ziggy's</span>
+                    <span class="show-card-date">Mar 28, 2026</span>
+                </div>
+            </div>
+            <div class="show-card">
+                <img src="img/PastShows/GhostLight4-10-26.png" alt="Ghost Light Apr 10 2026">
+                <div class="show-card-info">
+                    <span class="show-card-venue">Ghost Light</span>
+                    <span class="show-card-date">Apr 10, 2026</span>
+                </div>
+            </div>
+            <div class="show-card">
+                <img src="img/PastShows/kript4-18-26.png" alt="Kript Apr 18 2026">
+                <div class="show-card-info">
+                    <span class="show-card-venue">Kript</span>
+                    <span class="show-card-date">Apr 18, 2026</span>
+                </div>
+            </div>
+            <div class="show-card">
+                <img src="img/PastShows/LagerHouse4-29-26.png" alt="Lager House Apr 29 2026">
+                <div class="show-card-info">
+                    <span class="show-card-venue">Lager House</span>
+                    <span class="show-card-date">Apr 29, 2026</span>
+                </div>
+            </div>
+            <div class="show-card">
+                <img src="img/PastShows/Trixies5-22-26.png" alt="Trixie's May 22 2026">
+                <div class="show-card-info">
+                    <span class="show-card-venue">Trixie's</span>
+                    <span class="show-card-date">May 22, 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p class="footer-art">╰(*°▽°*)╯</p>
+        <p class="footer-tagline">SCRIBBLER IS SUNSHINE AND RAINBOWS</p>
+    </footer>
+
+</body>
+
+</html>
