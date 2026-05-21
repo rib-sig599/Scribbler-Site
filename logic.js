@@ -40,7 +40,6 @@ for (let i = 0; i < COUNT; i++) {
 
     // Alternate sides in pairs
     const side = Math.floor(i / 2) % 2 === 0 ? 'left' : 'right';
-    // Push further inward toward the content columns
     img.style[side]     = rand(-10, 180) + 'px';
 
     img.style.transform = `rotate(${rand(-16, 16)}deg)`;
