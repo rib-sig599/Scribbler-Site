@@ -103,6 +103,9 @@ body {
 .shows-section {
     flex: 1;
     min-width: 0;
+    background: rgba(5, 0, 12, 0.55);
+    border-radius: 6px;
+    padding: 1.6rem;
 }
 
 .shows-section h3,
@@ -133,19 +136,19 @@ body {
 
 .show-date {
     font-size: 0.85rem;
-    color: #8b0000;
+    color: #bf2020;
     min-width: 52px;
     letter-spacing: 0.05em;
 }
 
 .show-venue {
     font-size: 1.05rem;
-    color: #c8b8d8;
+    color: #e0d0f0;
 }
 
 .show-city {
     font-size: 0.8rem;
-    color: #5a4a6a;
+    color: #8a7a9a;
     letter-spacing: 0.05em;
     margin-left: 0.4rem;
 }
@@ -154,11 +157,14 @@ body {
 .music-section {
     flex-shrink: 0;
     width: 350px;
+    background: rgba(5, 0, 12, 0.55);
+    border-radius: 6px;
+    padding: 1.6rem;
 }
 
 .about-blurb {
     font-size: 0.95rem;
-    color: #8060a0;
+    color: #b090d0;
     font-style: italic;
     line-height: 1.75;
     margin-bottom: 1.8rem;
@@ -372,6 +378,7 @@ body {
 
     .music-section {
         width: 100%;
+        order: -1;
     }
 
     /* Let the iframe stretch to fill its container */
