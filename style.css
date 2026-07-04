@@ -57,6 +57,35 @@ body {
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.7);
 }
 
+/* Top now-playing ticker */
+.top-ticker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.6rem;
+    background: rgba(10, 0, 16, 0.85);
+    border-bottom: 1px solid rgba(75, 0, 130, 0.35);
+    overflow: hidden;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-track {
+    white-space: nowrap;
+    font-size: 0.65rem;
+    color: #5a3a6a;
+    font-style: italic;
+    letter-spacing: 0.14em;
+    animation: tickerScroll 40s linear infinite;
+}
+
+@keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Hero */
 .hero {
     min-height: 100vh;
@@ -64,6 +93,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 3rem 4rem 4rem;
+    padding-top: 4.5rem;
 }
 
 .hero h1,

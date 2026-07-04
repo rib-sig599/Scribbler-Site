@@ -49,6 +49,15 @@ for (let i = 0; i < COUNT; i++) {
     document.body.appendChild(img);
 }
 
+// Background audio — autoplay with user-gesture fallback
+const bgAudio = document.getElementById('bgAudio');
+bgAudio.volume = 0.35;
+bgAudio.play().catch(() => {
+    // Browsers block autoplay until user interacts — start on first click/touch
+    const startAudio = () => { bgAudio.play(); document.removeEventListener('click', startAudio); };
+    document.addEventListener('click', startAudio);
+});
+
 // Click band name easter egg
 let clickCount = 0;
 document.getElementById('bandName').addEventListener('click', function () {
