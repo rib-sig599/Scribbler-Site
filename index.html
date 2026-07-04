@@ -10,7 +10,10 @@
 
 <body>
     <!-- Background audio -->
-    <audio id="bgAudio" src="music/website.wav" loop></audio>
+    <audio id="bgAudio" loop>
+        <source src="music/website.mp3" type="audio/mpeg">
+        <source src="music/website.wav" type="audio/wav">
+    </audio>
 
     <!-- Top ticker: now playing -->
     <div class="top-ticker">
