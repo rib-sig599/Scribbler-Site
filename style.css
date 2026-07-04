@@ -119,6 +119,7 @@ body {
 
 .shows-list {
     list-style: none;
+    overflow: visible;
 }
 
 .shows-list li {
@@ -241,12 +242,18 @@ body {
     border-radius: 2px;
     margin-left: auto;
     flex-shrink: 0;
-    transition: opacity 0.2s, transform 0.2s;
+    position: relative;
+    z-index: 1;
+    cursor: zoom-in;
+    transform-origin: top right;
+    transition: opacity 0.25s, transform 0.25s, z-index 0s;
 }
 
 .show-flyer:hover {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(4.5);
+    z-index: 100;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* Live video embed */
