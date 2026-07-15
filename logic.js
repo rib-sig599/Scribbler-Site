@@ -51,11 +51,46 @@ for (let i = 0; i < COUNT; i++) {
 
 // Background audio — autoplay with user-gesture fallback
 const bgAudio = document.getElementById('bgAudio');
+const bgmBtn  = document.getElementById('bgmBtn');
+const bgmIcon = document.getElementById('bgmIcon');
+
 bgAudio.volume = 0.35;
+
+function updateBgmBtn() {
+    bgmIcon.textContent = bgAudio.paused ? '▶' : '❚❚';
+}
+bgAudio.addEventListener('play',  updateBgmBtn);
+bgAudio.addEventListener('pause', updateBgmBtn);
+
+// Autoplay fallback — removed once user takes manual control
+let autoplayFallback = null;
 bgAudio.play().catch(() => {
-    // Browsers block autoplay until user interacts — start on first click/touch
-    const startAudio = () => { bgAudio.play(); document.removeEventListener('click', startAudio); };
-    document.addEventListener('click', startAudio);
+    autoplayFallback = () => {
+        bgAudio.play();
+        document.removeEventListener('click',      autoplayFallback);
+        document.removeEventListener('touchstart', autoplayFallback);
+        autoplayFallback = null;
+    };
+    document.addEventListener('click',      autoplayFallback);
+    document.addEventListener('touchstart', autoplayFallback);
+});
+
+// BGM button — hand full control to the user
+bgmBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (autoplayFallback) {
+        document.removeEventListener('click',      autoplayFallback);
+        document.removeEventListener('touchstart', autoplayFallback);
+        autoplayFallback = null;
+    }
+    bgAudio.paused ? bgAudio.play() : bgAudio.pause();
+});
+
+// Pause bg audio when user clicks into any embedded player iframe
+window.addEventListener('blur', () => {
+    if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+        bgAudio.pause();
+    }
 });
 
 // Click band name easter egg

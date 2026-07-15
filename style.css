@@ -340,6 +340,84 @@ body {
 }
 
 
+/* Vintage Mac BGM player */
+.bgm-player {
+    position: fixed;
+    bottom: 1.4rem;
+    left: 1.2rem;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(180deg, #e2dbd4 0%, #c4bdb6 45%, #b0a9a2 100%);
+    border: 1px solid #7a7068;
+    border-top-color: #cec8c0;
+    border-left-color: #cec8c0;
+    border-radius: 5px;
+    padding: 4px 7px 4px 6px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.6),
+        inset 1px 0 0 rgba(255,255,255,0.25),
+        0 3px 7px rgba(0,0,0,0.6),
+        0 1px 2px rgba(0,0,0,0.4);
+    font-family: 'Monaco', 'Lucida Console', monospace;
+    user-select: none;
+    cursor: default;
+}
+
+.bgm-label {
+    font-size: 0.52rem;
+    color: #2e2820;
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.55);
+    line-height: 1;
+}
+
+.bgm-btn {
+    width: 26px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid #1a4aaa;
+    background: linear-gradient(180deg,
+        #b8d8ff 0%,
+        #5599ee 28%,
+        #1a66dd 55%,
+        #3a7aff 78%,
+        #90bcff 100%
+    );
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.8),
+        inset 0 -1px 0 rgba(0,0,60,0.35),
+        0 1px 3px rgba(0,0,0,0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,80,0.6);
+    line-height: 1;
+    padding: 0;
+    outline: none;
+    transition: filter 0.08s;
+}
+
+.bgm-btn:hover {
+    filter: brightness(1.12);
+}
+
+.bgm-btn:active {
+    background: linear-gradient(180deg,
+        #3a7aff 0%,
+        #1a66dd 40%,
+        #0a44bb 65%,
+        #2255ee 100%
+    );
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,80,0.45),
+        0 1px 1px rgba(0,0,0,0.3);
+}
+
 /* Easter Egg */
 .secret-message {
     position: fixed;
