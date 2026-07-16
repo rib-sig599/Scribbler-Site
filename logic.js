@@ -49,12 +49,17 @@ for (let i = 0; i < COUNT; i++) {
     document.body.appendChild(img);
 }
 
-// Background audio — autoplay with user-gesture fallback
+// Background audio — persistent across page navigation via sessionStorage
 const bgAudio = document.getElementById('bgAudio');
 const bgmBtn  = document.getElementById('bgmBtn');
 const bgmIcon = document.getElementById('bgmIcon');
 
 bgAudio.volume = 0.35;
+
+// Restore position and play state from the previous page
+const savedTime  = parseFloat(sessionStorage.getItem('bgmTime') || '0');
+const wasPlaying = sessionStorage.getItem('bgmPlaying') !== 'false'; // default true on first visit
+bgAudio.currentTime = savedTime;
 
 function updateBgmBtn() {
     bgmIcon.textContent = bgAudio.paused ? '▶' : '❚❚';
@@ -62,18 +67,27 @@ function updateBgmBtn() {
 bgAudio.addEventListener('play',  updateBgmBtn);
 bgAudio.addEventListener('pause', updateBgmBtn);
 
+// Save state before leaving the page so the next page can resume
+window.addEventListener('beforeunload', () => {
+    sessionStorage.setItem('bgmTime',    bgAudio.currentTime);
+    sessionStorage.setItem('bgmPlaying', String(!bgAudio.paused));
+});
+
 // Autoplay fallback — removed once user takes manual control
 let autoplayFallback = null;
-bgAudio.play().catch(() => {
-    autoplayFallback = () => {
-        bgAudio.play();
-        document.removeEventListener('click',      autoplayFallback);
-        document.removeEventListener('touchstart', autoplayFallback);
-        autoplayFallback = null;
-    };
-    document.addEventListener('click',      autoplayFallback);
-    document.addEventListener('touchstart', autoplayFallback);
-});
+
+if (wasPlaying) {
+    bgAudio.play().catch(() => {
+        autoplayFallback = () => {
+            bgAudio.play();
+            document.removeEventListener('click',      autoplayFallback);
+            document.removeEventListener('touchstart', autoplayFallback);
+            autoplayFallback = null;
+        };
+        document.addEventListener('click',      autoplayFallback);
+        document.addEventListener('touchstart', autoplayFallback);
+    });
+}
 
 // BGM button — hand full control to the user
 bgmBtn.addEventListener('click', (e) => {
@@ -93,9 +107,10 @@ window.addEventListener('blur', () => {
     }
 });
 
-// Click band name easter egg
+// Click band name easter egg (index.html only)
 let clickCount = 0;
-document.getElementById('bandName').addEventListener('click', function () {
+const bandName = document.getElementById('bandName');
+if (bandName) bandName.addEventListener('click', function () {
     clickCount++;
     if (clickCount >= 3) {
         this.style.transform = 'rotate(360deg)';
