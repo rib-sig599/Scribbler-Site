@@ -5,8 +5,12 @@ const artImages = [
     'img/art/IMG_3527.jpg',
     'img/art/2DDF2924-084D-46EC-AA6D-A49CBD418710.jpg',
     'img/art/fogo.jpg',
+    'img/art/fogo.png',
     'img/art/Screenshot 2026-05-16 165736.png',
-    'img/art/pistons.jpg'
+    'img/art/pistons.jpg',
+    'img/art/pistons.png',
+    'img/art/one.png',
+    'img/art/unnamed (1).jpg',
 ];
 
 // Fill scrolling text tracks with enough repetitions to loop seamlessly forever
@@ -74,6 +78,7 @@ const funPhotos = [
     'img/fun-photos/Untitled design (4).jpg',
     'img/fun-photos/dabandStand.jpg',
     'img/fun-photos/dabandSit.jpg',
+    'img/fun-photos/unnamed.jpg',
 ];
 const ratios = ['r-wide', 'r-square', 'r-tall'];
 const gallery = document.getElementById('gallery');
