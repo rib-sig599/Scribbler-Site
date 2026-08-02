@@ -308,7 +308,7 @@ body {
 }
 
 .shows-list li:has(.show-flyer)::after {
-    content: '👆  👆  👆';
+    content: '\261D\FE0E   \261D\FE0E   \261D\FE0E';
     display: block;
     width: 100%;
     text-align: right;
