@@ -49,6 +49,30 @@ for (let i = 0; i < COUNT; i++) {
     document.body.appendChild(img);
 }
 
+// Fun photo gallery — shuffled on every load
+const funPhotos = [
+    'img/fun-photos/459B447E-6E8B-44FC-8F63-FBB6ACE65EC0.jpg',
+    'img/fun-photos/3BC86E77-8AD2-4643-B062-CD3B82910A88.jpg',
+    'img/fun-photos/499F25D6-5E9C-438B-BD0E-ABC6AC8CBD68.jpg',
+    'img/fun-photos/5590287F-26E9-4419-839C-507CBFC00190.jpg',
+    'img/fun-photos/58D72BED-4C94-40E7-B8DF-AC094259B94D.jpg',
+    'img/fun-photos/IMG_1199.JPG',
+    'img/fun-photos/IMG_3402.JPG',
+    'img/fun-photos/IMG_3486.jpg',
+    'img/fun-photos/Untitled design (4).jpg',
+    'img/fun-photos/dabandStand.jpg',
+    'img/fun-photos/dabandSit.jpg',
+];
+const ratios = ['r-wide', 'r-square', 'r-tall'];
+const gallery = document.getElementById('gallery');
+shuffle(funPhotos).forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Scribbler live';
+    img.className = ratios[i % ratios.length];
+    gallery.appendChild(img);
+});
+
 // Background audio — persistent across page navigation via sessionStorage
 const bgAudio = document.getElementById('bgAudio');
 const bgmBtn  = document.getElementById('bgmBtn');
