@@ -9,6 +9,18 @@ const artImages = [
     'img/art/pistons.jpg'
 ];
 
+// Fill scrolling text tracks with enough repetitions to loop seamlessly forever
+function fillScrollTrack(el, phrase, reps) {
+    if (!el) return;
+    const unit = phrase + ' ·  ';
+    el.textContent = unit.repeat(reps);
+}
+fillScrollTrack(document.querySelector('.ticker-track'),
+    '♪   you are listening to scribbler website jams', 30);
+document.querySelectorAll('.scroll-track').forEach(el =>
+    fillScrollTrack(el, 'play chess. smoke weed. make music · Scribbler is sunshine and rainbows.', 24)
+);
+
 // Fisher-Yates shuffle — randomize on every load
 function shuffle(arr) {
     const a = [...arr];
@@ -150,6 +162,23 @@ if (bandName) bandName.addEventListener('click', function () {
         clickCount = 0;
     }
 });
+
+// Show flyer modal on click
+const flyerModal    = document.getElementById('flyerModal');
+const flyerModalImg = document.getElementById('flyerModalImg');
+if (flyerModal) {
+    document.querySelectorAll('.show-flyer').forEach(img => {
+        img.addEventListener('click', () => {
+            flyerModalImg.src = img.src;
+            flyerModalImg.alt = img.alt;
+            flyerModal.classList.add('open');
+        });
+    });
+    flyerModal.addEventListener('click', () => flyerModal.classList.remove('open'));
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') flyerModal.classList.remove('open');
+    });
+}
 
 // Double-click anywhere for floating emojis
 const emojis = ['🎸', '🎵', '🎶', '⭐', '🎤', '🎹', '🥁', '🎺', '✨', '💫'];
