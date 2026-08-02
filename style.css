@@ -308,11 +308,11 @@ body {
 }
 
 .shows-list li:has(.show-flyer)::after {
-    content: '\261D\FE0E   \261D\FE0E   \261D\FE0E';
+    content: '\261D\FE0E  \261D\FE0E  \261D\FE0E  \261D\FE0E  \261D\FE0E';
     display: block;
     width: 100%;
     text-align: right;
-    font-size: 0.58rem;
+    font-size: 0.8rem;
     color: #bf2020;
     letter-spacing: 0.08em;
     font-style: italic;
