@@ -252,10 +252,15 @@ body {
     display: block;
     margin-bottom: 0.8rem;
     break-inside: avoid;
+    object-fit: cover;
     opacity: 0.85;
     transition: opacity 0.25s, transform 0.25s;
     cursor: pointer;
 }
+
+.gallery img.r-wide   { aspect-ratio: 3/2; }
+.gallery img.r-square { aspect-ratio: 1/1; }
+.gallery img.r-tall   { aspect-ratio: 2/3; }
 
 .gallery img:hover {
     opacity: 1;
