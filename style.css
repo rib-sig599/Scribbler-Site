@@ -78,7 +78,7 @@ body {
     color: #5a3a6a;
     font-style: italic;
     letter-spacing: 0.14em;
-    animation: tickerScroll 40s linear infinite;
+    animation: tickerScroll 85s linear infinite;
 }
 
 @keyframes tickerScroll {
@@ -299,6 +299,25 @@ body {
     text-shadow: 0 0 12px #9b30d0;
     background: rgba(75, 0, 130, 0.25);
     box-shadow: 0 0 20px rgba(139, 0, 139, 0.5), inset 0 0 12px rgba(75, 0, 130, 0.2);
+}
+
+/* Flyer hint — only on rows that have a thumbnail */
+.shows-list li:has(.show-flyer) {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.shows-list li:has(.show-flyer)::after {
+    content: '☞ click to enlarge';
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 0.58rem;
+    color: #bf2020;
+    letter-spacing: 0.08em;
+    font-style: italic;
+    margin-top: -0.3rem;
+    opacity: 0.75;
 }
 
 /* Show flyer thumbnail in upcoming shows list */
