@@ -308,7 +308,7 @@ body {
 }
 
 .shows-list li:has(.show-flyer)::after {
-    content: '☞ click to enlarge';
+    content: '👆  👆  👆';
     display: block;
     width: 100%;
     text-align: right;
