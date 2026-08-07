@@ -388,21 +388,27 @@ body {
 .music-link-icon {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     text-decoration: none;
-    color: #5a3a6a;
-    opacity: 0.6;
-    transition: opacity 0.2s, color 0.2s;
+    color: #d4b0e8;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(139, 0, 139, 0.6);
+    border-radius: 3px;
+    background: rgba(75, 0, 130, 0.12);
+    box-shadow: 0 0 10px rgba(75, 0, 130, 0.2), inset 0 0 8px rgba(75, 0, 130, 0.08);
+    transition: color 0.2s, border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .music-link-icon:hover {
-    opacity: 1;
-    color: #d4b0e8;
+    color: #f0d8ff;
+    border-color: #8b008b;
+    background: rgba(75, 0, 130, 0.25);
+    box-shadow: 0 0 20px rgba(139, 0, 139, 0.5), inset 0 0 12px rgba(75, 0, 130, 0.2);
 }
 
 .music-link-icon svg {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     fill: currentColor;
     flex-shrink: 0;
 }
