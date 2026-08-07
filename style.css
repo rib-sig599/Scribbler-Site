@@ -372,6 +372,47 @@ body {
     pointer-events: none;
 }
 
+/* Music platform links */
+.music-links {
+    margin-top: 2rem;
+}
+
+.music-link-icons {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.music-link-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #5a3a6a;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.music-link-icon:hover {
+    opacity: 1;
+    color: #d4b0e8;
+}
+
+.music-link-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.music-link-icon span {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
 /* Live video embed */
 .live-video-section {
     margin-top: 2rem;
