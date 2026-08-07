@@ -374,7 +374,8 @@ body {
 
 /* Music platform links */
 .music-links {
-    margin-top: 2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
 }
 
 .music-link-icons {
