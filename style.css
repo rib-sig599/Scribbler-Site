@@ -301,10 +301,32 @@ body {
     box-shadow: 0 0 20px rgba(139, 0, 139, 0.5), inset 0 0 12px rgba(75, 0, 130, 0.2);
 }
 
+/* Tickets link on show rows */
+.show-tickets-link {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bf2020;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(191, 32, 32, 0.4);
+    margin-left: auto;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.show-tickets-link:hover {
+    color: #e04040;
+    border-bottom-color: rgba(224, 64, 64, 0.7);
+}
+
 /* Flyer hint — only on rows that have a thumbnail */
 .shows-list li:has(.show-flyer) {
     flex-wrap: wrap;
     align-items: center;
+}
+
+.shows-list li:has(.show-tickets-link) .show-flyer {
+    margin-left: 0.6rem;
 }
 
 .shows-list li:has(.show-flyer)::after {
