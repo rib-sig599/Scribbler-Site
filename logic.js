@@ -83,7 +83,6 @@ const funPhotos = [
     'img/fun-photos/IMG_0173.JPG',
     'img/fun-photos/IMG_0180.JPG',
     'img/fun-photos/IMG_0194.JPG',
-    'img/fun-photos/IMG_0195.JPG',
     'img/fun-photos/IMG_0201.JPG',
 ];
 const ratios = ['r-wide', 'r-square', 'r-tall'];
