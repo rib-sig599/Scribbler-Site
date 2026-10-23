@@ -319,6 +319,23 @@ body {
     border-bottom-color: rgba(224, 64, 64, 0.7);
 }
 
+/* Listen-back / extra link on past show cards */
+.show-card-link {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bf2020;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(191, 32, 32, 0.4);
+    align-self: flex-start;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.show-card-link:hover {
+    color: #e04040;
+    border-bottom-color: rgba(224, 64, 64, 0.7);
+}
+
 /* Flyer hint — only on rows that have a thumbnail */
 .shows-list li:has(.show-flyer) {
     flex-wrap: wrap;
