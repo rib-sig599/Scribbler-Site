@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +22,17 @@
         }
 
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Navigation */
@@ -48,7 +57,7 @@
             color: #ffd56b;
             text-decoration: none;
             font-size: 1.2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             transition: all 0.3s;
         }
 
@@ -70,20 +79,27 @@
 
         .hero h1 {
             font-size: 5rem;
-            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             animation: bounce 2s infinite;
             cursor: pointer;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-top: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         /* Section Styling */
@@ -115,7 +131,7 @@
         section h2 {
             font-size: 3rem;
             margin-bottom: 2rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
         }
 
         .content-box {
@@ -125,7 +141,7 @@
             padding: 2rem;
             max-width: 800px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         /* Music Grid */
@@ -253,6 +269,7 @@
                 transform: translateY(0) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-500px) rotate(360deg);
                 opacity: 0;
@@ -260,6 +277,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -275,7 +293,6 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <h1 id="bandName">SCRIBBLER</h1>
-        <p>✨ Making noise since [YEAR] ✨</p>
         <p style="font-size: 1rem; margin-top: 2rem; opacity: 0.8;">(click the logo for a surprise!)</p>
     </section>
 
@@ -284,13 +301,13 @@
         <h2>About Us</h2>
         <div class="content-box">
             <p style="font-size: 1.2rem; line-height: 1.8;">
-                We're Scribbler! A band that accidentally formed when [BAND MEMBER 1] 
-                brought a guitar to [BAND MEMBER 2]'s birthday party and things got 
-                out of hand. Now we make music that sounds like [YOUR GENRE] had a baby 
+                We're Scribbler! A band that accidentally formed when [BAND MEMBER 1]
+                brought a guitar to [BAND MEMBER 2]'s birthday party and things got
+                out of hand. Now we make music that sounds like [YOUR GENRE] had a baby
                 with [ANOTHER GENRE] and raised it on a steady diet of [RANDOM FOOD].
             </p>
             <p style="font-size: 1.2rem; line-height: 1.8; margin-top: 1rem;">
-                Our mission: to create songs that make you want to dance, cry, 
+                Our mission: to create songs that make you want to dance, cry,
                 or question your life choices—sometimes all at once!
             </p>
         </div>
@@ -359,7 +376,7 @@
         <h2>Connect With Us</h2>
         <div class="content-box">
             <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                Follow us on social media for updates, behind-the-scenes chaos, 
+                Follow us on social media for updates, behind-the-scenes chaos,
                 and the occasional meme!
             </p>
             <div class="social-links">
@@ -385,7 +402,7 @@
     <script>
         // Click band name easter egg
         let clickCount = 0;
-        document.getElementById('bandName').addEventListener('click', function() {
+        document.getElementById('bandName').addEventListener('click', function () {
             clickCount++;
             if (clickCount >= 3) {
                 this.style.transform = 'rotate(360deg)';
@@ -393,7 +410,7 @@
                 setTimeout(() => {
                     this.style.transform = 'rotate(0deg)';
                 }, 1000);
-                
+
                 // Show secret message
                 document.getElementById('secretMsg').classList.add('show');
                 setTimeout(() => {
@@ -405,14 +422,14 @@
 
         // Double-click anywhere for floating emojis
         const emojis = ['🎸', '🎵', '🎶', '⭐', '🎤', '🎹', '🥁', '🎺', '✨', '💫'];
-        document.addEventListener('dblclick', function(e) {
+        document.addEventListener('dblclick', function (e) {
             const emoji = document.createElement('div');
             emoji.className = 'floating-emoji';
             emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
             emoji.style.left = e.pageX + 'px';
             emoji.style.top = e.pageY + 'px';
             document.body.appendChild(emoji);
-            
+
             setTimeout(() => {
                 emoji.remove();
             }, 3000);
@@ -420,7 +437,7 @@
 
         // Album card click
         document.querySelectorAll('.album-card').forEach(card => {
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function () {
                 this.style.animation = 'none';
                 setTimeout(() => {
                     this.style.animation = '';
@@ -429,4 +446,5 @@
         });
     </script>
 </body>
+
 </html>
